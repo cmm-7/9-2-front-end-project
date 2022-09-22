@@ -117,7 +117,7 @@ function descript(match, homeImg, awayImg){
     else if(match.status === "POSTPONED"){
         hoverDescript= `<p> Date: TBD </p>`
     }
-    
+
 
     let displayBox = `
       <div class="card">
@@ -160,19 +160,19 @@ async function getApi(id, startDate, endDate) {
     if(!startDate && !endDate){
         let date = new Date();
         console.log(date);
-        let year = date.getFullYear();
-        let day = date.getDate();
+        let year = date.getFullYear().toString(); 
+        let day = date.getDate().toString();
+        let month = date.getMonth() + 1;
+        month = month.toString();
         if(day.length === 1){
             day = `0${day}`;
         }
         if(month.length === 1){
             month = `0${month}`;
         }
-        let month = date.getMonth() + 1;
         startDate = `${year}-${month}-${day}`;
         endDate = `${year}-${month}-${day}`; // I had to input the 0 in order for this to work. An issue would happen if the month and day are single digits
         }
-
         console.log(id);
     console.log(id, startDate, endDate);
     const main = document.querySelector("main");
@@ -186,6 +186,10 @@ async function getApi(id, startDate, endDate) {
             return main.innerText = "Argument 'Start Date' must be dated before the one specified in 'End Date'"
         }
     } 
+
+    if(response.count === 0){
+        return main.innerText = "No games today!"
+    }
     const homeTeam = document.createElement("div")
     homeTeam.setAttribute("class", "cards");
     

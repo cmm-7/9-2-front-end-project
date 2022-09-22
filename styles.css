@@ -64,9 +64,10 @@ form {
   }
   
   .card {
-    margin: 40px;
+    margin: 2%;
+    margin-bottom: 60px;
     position: relative;
-    max-width: 250px;
+    /* max-width: 250px; */
     max-height: 350px;
     box-shadow: 0 40px 60px -6px black;
   }
@@ -109,8 +110,8 @@ form {
   }
   
   .card img {
-    width: 30%;
-    /* height: 98%; */
+    width: 100px;
+    height: 75px;
     object-fit: cover;
     display: block;
     position: relative;
@@ -143,6 +144,14 @@ form {
     text-align: center;
   }
   
+
+@media (max-width: 768px){
+  .cards {
+    grid-template-columns: repeat(2, 1fr);
+    
+}
+}
+
 
 
   @media (max-width: 425px){

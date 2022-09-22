@@ -210,7 +210,7 @@ async function getApi(id, startDate, endDate) {
 
 async function getTeamLogo(id) {
     console.log(id);
-    const fetchApi = await fetch(`http://api.football-data.org/v2/teams/${id}`, options) 
+    const fetchApi = await fetch(`https://api.football-data.org/v2/teams/${id}`, options) 
     const response = await fetchApi.json()
 
     return response.crestUrl;

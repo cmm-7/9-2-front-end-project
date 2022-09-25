@@ -188,7 +188,7 @@ async function getApi(id, startDate, endDate) {
     } 
 
     if(response.count === 0){
-        return main.innerText = "No games today!"
+        return main.innerHTML = `<p class = "nogames"> No games today! </p>`
     }
     const homeTeam = document.createElement("div")
     homeTeam.setAttribute("class", "cards");

@@ -9,4 +9,5 @@ body {
   p {
     text-align: center;
     width: 60%;
+    border: white;
   }

@@ -183,7 +183,7 @@ async function getApi(id, startDate, endDate) {
             return main.innerText = response.message;
         }
         else{
-            return main.innerText = "Argument 'Start Date' must be dated before the one specified in 'End Date'"
+            return main.innerHTML = `<p class="dateError"> Argument 'Start Date' must be dated before the one specified in 'End Date </p>`
         }
     } 
 
